@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master AML/KYC & Fraud Analysis | Professional Certification Course</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #166534;
+            --secondary: #16a34a;
+            --accent: #d97706;
+            --dark: #0f172a;
+            --light: #f0fdf4;
+            --gradient: linear-gradient(135deg, #166534 0%, #16a34a 100%);
+            --soft-green: #dcfce7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 5%;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(22, 101, 52, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 5% 4rem;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: var(--gradient);
+            border-radius: 50%;
+            opacity: 0.05;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 span {
+            color: var(--secondary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #bbf7d0;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        .mode-badge {
+            background: var(--soft-green);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #86efac;
+        }
+
+        /* Course Overview */
+        .overview {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: #64748b;
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .module-card {
+            background: white;
+            border: 1px solid #bbf7d0;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(22, 101, 52, 0.1);
+        }
+
+        .module-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .module-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--soft-green);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .module-card h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .module-list {
+            list-style: none;
+            color: #64748b;
+        }
+
+        .module-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .module-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Instructor Section */
+        .instructor {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%);
+        }
+
+        .instructor-grid {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .instructor-image {
+            position: relative;
+        }
+
+        .instructor-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--gradient);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(22, 101, 52, 0.3);
+        }
+
+        .experience-badge .years {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .instructor-content h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .instructor-role {
+            color: var(--secondary);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .instructor-message {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            border-left: 4px solid var(--secondary);
+            margin: 2rem 0;
+            font-style: italic;
+            color: #475569;
+            position: relative;
+        }
+
+        .instructor-message::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--secondary);
+            opacity: 0.2;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+
+        .experience-list {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #bbf7d0;
+            margin: 1.5rem 0;
+        }
+
+        .experience-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-item i {
+            color: var(--secondary);
+            margin-top: 0.25rem;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            border: 1px solid #bbf7d0;
+            color: var(--dark);
+        }
+
+        .linkedin-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            color: #0077b5;
+            text-decoration: none;
+            font-weight: 600;
+            transition: gap 0.3s;
+        }
+
+        .linkedin-btn:hover {
+            gap: 1rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: #f0fdf4;
+            padding: 2rem;
+            border-radius: 16px;
+            position: relative;
+            transition: transform 0.3s;
+            border: 1px solid #bbf7d0;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(22, 101, 52, 0.1);
+        }
+
+        .review-stars {
+            color: #eab308;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            color: #475569;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+
+        .impact-tag {
+            display: inline-block;
+            background: #166534;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Social Links Section */
+        .connect {
+            padding: 5rem 5%;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+
+        .connect h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .connect p {
+            color: #94a3b8;
+            margin-bottom: 3rem;
+        }
+
+        .social-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 16px;
+            width: 200px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 0;
+        }
+
+        .social-card:hover::before {
+            opacity: 1;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            border-color: transparent;
+        }
+
+        .social-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-card h3 {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-card p {
+            font-size: 0.875rem;
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+
+        .whatsapp-card {
+            border-color: #25d366;
+        }
+
+        .whatsapp-card:hover::before {
+            background: #25d366;
+        }
+
+        .instagram-card:hover::before {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        }
+
+        .youtube-card:hover::before {
+            background: #ff0000;
+        }
+
+        .linkedin-card:hover::before {
+            background: #0077b5;
+        }
+
+        /* Footer */
+        footer {
+            background: #022c22;
+            color: #86efac;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .hero-container,
+            .instructor-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .instructor-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .experience-list {
+                text-align: left;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .modules-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i> CompliancePro Academy
+            </div>
+            <ul class="nav-links">
+                <li><a href="#overview">Course Content</a></li>
+                <li><a href="#instructor">Instructor</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+            <a href="#enroll" class="cta-button">Enroll Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="mode-badge">
+                    <i class="fas fa-broadcast-tower"></i>
+                    Available in Online & Recorded (Stream Offline) Modes
+                </div>
+                
+                <div class="hero-badges">
+                    <span class="badge"><i class="fas fa-award"></i> By Industry Recognized Instructor</span>
+                    <span class="badge"><i class="fas fa-users"></i> 500+ Students</span>
+                    <span class="badge"><i class="fas fa-infinity"></i> Lifetime Access</span>
+                </div>
+                <h1>Master <span>AML/KYC</span> & Fraud Analysis</h1>
+                <p class="hero-subtitle">
+                    Comprehensive training in Anti-Money Laundering, Know Your Customer compliance, Transaction Monitoring, and Fraud Detection. Launch your career in financial crime prevention with guidance from an industry veteran.
+                </p>
+                <a href="#enroll" class="cta-button" style="font-size: 1.125rem; padding: 1rem 2rem;">
+                    Start Your Journey <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">4.9</span>
+                        <span class="stat-label">Course Rating</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">85%</span>
+                        <span class="stat-label">Placement Rate</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">8+</span>
+                        <span class="stat-label">Years Industry Exp.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div style="background: var(--gradient); height: 500px; border-radius: 24px; display: flex; align-items: center; justify-content: center; color: white; font-size: 6rem; box-shadow: 0 25px 50px -12px rgba(22, 101, 52, 0.25);">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section class="overview" id="overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>What You'll Learn</h2>
+                <p>Master the essential skills required for AML/KYC Analyst and Fraud Analyst roles in banking, fintech, and regulatory bodies</p>
+            </div>
+            
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>AML Fundamentals</h3>
+                    <ul class="module-list">
+                        <li>Money Laundering Typologies</li>
+                        <li>AML Regulations & Compliance (PMLA, BSA, FATF)</li>
+                        <li>Risk-Based Approach</li>
+                        <li>CDD & EDD Frameworks</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>KYC Procedures</h3>
+                    <ul class="module-list">
+                        <li>Customer Identification Program</li>
+                        <li>Identity Verification Techniques</li>
+                        <li>UBO Identification</li>
+                        <li>PEP & Sanctions Screening</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Transaction Monitoring</h3>
+                    <ul class="module-list">
+                        <li>Scenario & Rule Development</li>
+                        <li>Alert Investigation</li>
+                        <li>SAR/STR Filing</li>
+                        <li>Behavioral Analytics</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Fraud Detection</h3>
+                    <ul class="module-list">
+                        <li>Fraud Typologies (Identity, Payment, Digital)</li>
+                        <li>Anomaly Detection</li>
+                        <li>Device Fingerprinting</li>
+                        <li>Fraud Risk Assessment</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Regulatory Framework</h3>
+                    <ul class="module-list">
+                        <li>FATF Recommendations</li>
+                        <li>Basel III Guidelines</li>
+                        <li>Local Regulatory Requirements</li>
+                        <li>Audit & Reporting Standards</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Tools & Technology</h3>
+                    <ul class="module-list">
+                        <li>AML Software (Actimize, FircoSoft)</li>
+                        <li>Data Analysis with SQL/Excel</li>
+                        <li>Python for Fraud Detection</li>
+                        <li>Case Management Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section class="instructor" id="instructor">
+        <div class="instructor-grid">
+            <div class="instructor-image">
+                <img src="mnt/kimi/upload/image.png" alt="Aparna Rao - AML Expert">
+                <div class="experience-badge">
+                    <span class="years">8+</span>
+                    <span>Years Exp.</span>
+                </div>
+            </div>
+            <div class="instructor-content">
+                <h2>Meet Your Instructor</h2>
+                <p class="instructor-role">Aparna Rao | Financial Crime Prevention Expert & Former Fraud Officer</p>
+                
+                <p style="color: #475569; margin-bottom: 1rem;">
+                    An industry-recognized compliance professional with 8+ years of hands-on experience in AML/KYC operations, transaction monitoring, and fraud prevention across major banking and financial institutions.
+                </p>
+
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <i class="fas fa-briefcase"></i>
+                        <div>
+                            <strong>Former Fraud Officer</strong>
+                            <p style="font-size: 0.875rem; color: #64748b; margin: 0;">Direct experience in fraud investigation and prevention in the financial industry</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <div>
+                            <strong>Learning & Development Manager</strong>
+                            <p style="font-size: 0.875rem; color: #64748b; margin: 0;">Genpact - Spearheaded training programs for compliance teams</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <i class="fas fa-users-cog"></i>
+                        <div>
+                            <strong>Learning Coordinator</strong>
+                            <p style="font-size: 0.875rem; color: #64748b; margin: 0;">EXL - Managed comprehensive learning initiatives for operations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instructor-message">
+                    <strong>Dear Future Analyst,</strong><br><br>
+                    Having worked on the front lines as a Fraud Officer and trained hundreds of professionals at Genpact and EXL, I understand exactly what the industry demands. Financial crime is evolving rapidly, and the sector needs skilled professionals who can stay ahead of criminals. I've designed this course to bridge the gap between theoretical knowledge and practical application, incorporating real case studies from my 8+ years in the field. Whether you're switching careers or upskilling, this course will equip you with battle-tested strategies used by top financial institutions. Your journey to becoming a compliance expert starts here.
+                </div>
+
+                <div class="expertise-tags">
+                    <span class="tag"><i class="fas fa-check-circle"></i> Former Fraud Officer</span>
+                    <span class="tag"><i class="fas fa-check-circle"></i> CAMS Certified</span>
+                    <span class="tag"><i class="fas fa-check-circle"></i> L&D Expert</span>
+                    <span class="tag"><i class="fas fa-check-circle"></i> Transaction Monitoring</span>
+                    <span class="tag"><i class="fas fa-check-circle"></i> Regulatory Reporting</span>
+                    <span class="tag"><i class="fas fa-check-circle"></i> Risk Assessment</span>
+                </div>
+
+                <a href="https://www.linkedin.com/in/aparna-rao-69b19a37b" target="_blank" class="linkedin-btn">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                    Connect on LinkedIn <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>Student Success Stories</h2>
+                <p>See how this course has transformed careers and opened doors in the compliance industry</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "Transitioned from a customer service role to a KYC Analyst at a major bank within 3 months of completing this course. The practical case studies and mock investigations prepared me perfectly for interviews. Best investment in my career!"
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">RK</div>
+                        <div class="author-info">
+                            <h4>Rahul Kumar</h4>
+                            <p>KYC Analyst at HDFC Bank</p>
+                            <span class="impact-tag">Career Switch Success</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "The transaction monitoring module was eye-opening. I learned rule optimization techniques that helped my previous company reduce false positives by 30%. Got promoted to Senior Analyst within 6 months!"
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">PS</div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Senior AML Analyst at Paytm</p>
+                            <span class="impact-tag">Promotion Achieved</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "As a fresh graduate, this course gave me the edge I needed. The resume review and interview prep sessions were invaluable. Landed my first job at a Big 4 consultancy as a Fraud Investigation Associate."
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">AM</div>
+                        <div class="author-info">
+                            <h4>Arun Menon</h4>
+                            <p>Fraud Investigator at Deloitte</p>
+                            <span class="impact-tag">First Job Secured</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="review-text">
+                        "Coming from a non-finance background (IT), I was worried about the technical aspects. But Aparna ma'am explained complex regulations in such simple terms. Now I work as a Compliance Tech Analyst!"
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">SJ</div>
+                        <div class="author-info">
+                            <h4>Sneha Joshi</h4>
+                            <p>Compliance Tech at Infosys</p>
+                            <span class="impact-tag">Industry Transition</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "The WhatsApp community is gold! Immediate doubt resolution and job alerts helped me stay updated. The course content is updated regularly with latest RBI circulars and FATF updates. Highly recommended!"
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">VK</div>
+                        <div class="author-info">
+                            <h4>Vikram Khanna</h4>
+                            <p>AML Manager at ICICI Bank</p>
+                            <span class="impact-tag">Continuous Learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "Worth every penny! The hands-on assignments with real redacted SARs and investigation reports gave me confidence. Cleared my CAMS certification on the first attempt using the study strategies shared here."
+                    </p>
+                    <div class="review-author">
+                        <div class="author-avatar">NR</div>
+                        <div class="author-info">
+                            <h4>Neha Reddy</h4>
+                            <p>Compliance Officer at Axis Bank</p>
+                            <span class="impact-tag">Certification Cleared</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Connect Section -->
+    <section class="connect" id="connect">
+        <div class="container">
+            <h2>Join Our Community</h2>
+            <p>Connect with fellow learners, get industry updates, job alerts, and exclusive content</p>
+            
+            <div class="social-grid">
+                <a href="#" class="social-card whatsapp-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp Alerts</h3>
+                    <p>Job alerts & daily quiz</p>
+                </a>
+
+                <a href="https://www.linkedin.com/in/aparna-rao-69b19a37b" target="_blank" class="social-card linkedin-card">
+                    <i class="fab fa-linkedin-in"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Professional network</p>
+                </a>
+
+                <a href="#" class="social-card youtube-card">
+                    <i class="fab fa-youtube"></i>
+                    <h3>YouTube</h3>
+                    <p>Free tutorials & webinars</p>
+                </a>
+
+                <a href="#" class="social-card instagram-card">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Instagram</h3>
+                    <p>Tips & behind scenes</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 CompliancePro Academy. All rights reserved. | Empowering the next generation of Financial Crime Fighters</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.module-card, .review-card').forEach((el, index) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(20px)";
+            el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
